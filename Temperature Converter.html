@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temperature Converter</title>
+<style>
+body{
+    margin:0;
+    font-family:'Arial', sans-serif;
+    background: linear-gradient(135deg,#f5f7fa,#c3cfe2);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(15px);
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    text-align:center;
+    width:320px;
+}
+
+h2{
+    background: linear-gradient(45deg,#ff6ec4,#7873f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom:20px;
+}
+
+input[type="number"]{
+    width:80%;
+    padding:10px;
+    border-radius:12px;
+    border:1px solid #ccc;
+    margin-bottom:15px;
+    font-size:16px;
+}
+
+select{
+    padding:10px;
+    border-radius:12px;
+    border:1px solid #ccc;
+    margin-bottom:15px;
+    font-size:16px;
+}
+
+button{
+    background: linear-gradient(45deg,#ff6ec4,#7873f5);
+    border:none;
+    color:white;
+    padding:12px 25px;
+    border-radius:12px;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background: linear-gradient(45deg,#7873f5,#ff6ec4);
+    transform:scale(1.05);
+}
+
+.result{
+    margin-top:20px;
+    font-size:20px;
+    color:#333;
+    font-weight:600;
+}
+
+/* Extra styling for Kelvin text */
+.kelvin{
+    color:#ff6ec4;
+    font-weight:700;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Temperature Converter</h2>
+    <input type="number" id="tempInput" placeholder="Enter temperature">
+    <br>
+    <select id="unitSelect">
+        <option value="C">Celsius (°C)</option>
+        <option value="F">Fahrenheit (°F)</option>
+        <option value="K">Kelvin (K)</option>
+    </select>
+    <br>
+    <button onclick="convertTemp()">Convert</button>
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+function convertTemp(){
+    const temp = parseFloat(document.getElementById('tempInput').value);
+    const unit = document.getElementById('unitSelect').value;
+    const resultDiv = document.getElementById('result');
+
+    if(isNaN(temp)){
+        resultDiv.innerHTML = "❌ Please enter a valid number!";
+        return;
+    }
+
+    let celsius, fahrenheit, kelvin;
+
+    if(unit === "C"){
+        celsius = temp;
+        fahrenheit = (temp * 9/5 + 32).toFixed(2);
+        kelvin = (temp + 273.15).toFixed(2);
+    } else if(unit === "F"){
+        celsius = ((temp - 32) * 5/9).toFixed(2);
+        fahrenheit = temp;
+        kelvin = ((temp - 32) * 5/9 + 273.15).toFixed(2);
+    } else if(unit === "K"){
+        celsius = (temp - 273.15).toFixed(2);
+        fahrenheit = ((temp - 273.15) * 9/5 + 32).toFixed(2);
+        kelvin = temp;
+    }
+
+    resultDiv.innerHTML = `
+        🌡️ Celsius: ${celsius} °C <br>
+        🌡️ Fahrenheit: ${fahrenheit} °F <br>
+        🌡️ Kelvin: <span class="kelvin">${kelvin} K</span>
+    `;
+}
+</script>
+
+</body>
+</html>
