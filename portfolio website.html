@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swethasri Portfolio</title>
+<style>
+body{
+    margin:0;
+    font-family:'Arial', sans-serif;
+    background: linear-gradient(135deg,#f5f7fa,#c3cfe2);
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 50px;
+    background:rgba(255,255,255,0.2);
+    backdrop-filter: blur(15px);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav h1{
+    font-size:28px;
+    background: linear-gradient(45deg,#ff6ec4,#7873f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#ff6ec4;
+}
+
+/* HERO SECTION */
+.hero{
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero img{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    border:5px solid #fff;
+    object-fit:cover;
+    box-shadow:0 15px 25px rgba(255,110,196,0.4);
+}
+
+.hero h2{
+    margin:15px 0 10px;
+    font-size:40px;
+    background: linear-gradient(45deg,#ff6ec4,#7873f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p{
+    font-size:18px;
+    color:#555;
+    max-width:600px;
+    margin:auto;
+}
+
+/* PROJECTS / SKILLS */
+.projects{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.projects h3{
+    font-size:32px;
+    color:#7873f5;
+    margin-bottom:40px;
+}
+
+.grid{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+}
+
+.card{
+    width:250px;
+    padding:25px;
+    border-radius:20px;
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(10px);
+    box-shadow:0 8px 25px rgba(0,0,0,0.1);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.05);
+    box-shadow:0 15px 35px rgba(255,110,196,0.3);
+}
+
+.card h4{
+    margin:15px 0 5px;
+    color:#ff6ec4;
+}
+
+.card p{
+    font-size:14px;
+    color:#333;
+}
+
+.skill-bar{
+    margin-top:15px;
+    height:10px;
+    background:#ddd;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.skill-bar div{
+    height:100%;
+    background: linear-gradient(45deg,#ff6ec4,#7873f5);
+    width:0;
+    border-radius:10px;
+    transition: width 1s;
+}
+
+/* CONTACT */
+.contact{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.contact h3{
+    font-size:28px;
+    color:#ff6ec4;
+    margin-bottom:20px;
+}
+
+.contact p{
+    font-size:16px;
+    color:#333;
+    margin:5px 0;
+}
+
+.contact .socials{
+    margin-top:15px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.contact .socials a{
+    font-size:24px;
+    color:#7873f5;
+    transition:.3s;
+}
+
+.contact .socials a:hover{
+    color:#ff6ec4;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    background:linear-gradient(45deg,#ff6ec4,#7873f5);
+    color:white;
+    padding:12px 25px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:linear-gradient(45deg,#7873f5,#ff6ec4);
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:linear-gradient(90deg,#ff6ec4,#7873f5);
+    color:white;
+    margin-top:40px;
+    border-radius:15px 15px 0 0;
+}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+    .grid{
+        flex-direction:column;
+        align-items:center;
+    }
+}
+</style>
+<!-- FontAwesome for social icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h1>Swethasri</h1>
+    <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+    <img src="C:\Users\DELL\OneDrive\Desktop\OASIS INFOBYTE\swetha.jpg" alt="My Photo">
+    <h2>Hello, I'm Swethasri</h2>
+    <p>I'm a passionate web developer creating responsive and interactive websites using HTML, CSS, and JavaScript.</p>
+</section>
+
+<!-- PROJECTS / SKILLS -->
+<section class="projects" id="projects">
+    <h3>My Skills & Projects</h3>
+    <div class="grid">
+        <div class="card">
+            <h4>HTML & CSS</h4>
+            <p>Designing responsive and beautiful websites.</p>
+            <div class="skill-bar"><div style="width:90%"></div></div>
+        </div>
+        <div class="card">
+            <h4>JavaScript</h4>
+            <p>Adding dynamic behavior and interactive elements.</p>
+            <div class="skill-bar"><div style="width:75%"></div></div>
+        </div>
+        <div class="card">
+            <h4>Portfolio Project</h4>
+            <p>Showcasing my creative projects and skills.</p>
+        <div class="skill-bar"><div style="width:85%"></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <h3>Contact Me</h3>
+    <p>Email: rapoluswethasri224@gmail.com</p>
+    <p>Phone: +9121827621</p>
+    <div class="socials">
+        <a href="#"><i class="fab fa-facebook-square"></i></a>
+        <a href="#"><i class="fab fa-instagram-square"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <a href="#" class="btn">Download Resume</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    © 2025 Swethasri | Designed by Rapolu Swethasri ❤
+</footer>
+
+<script>
+// Animate skill bars on scroll
+window.addEventListener('scroll', () => {
+    document.querySelectorAll('.skill-bar div').forEach(bar => {
+        const rect = bar.getBoundingClientRect();
+        if(rect.top < window.innerHeight){
+            bar.style.width = bar.style.width || bar.getAttribute('style').match(/\d+/)[0] + '%';
+        }
+    });
+});
+</script>
+
+</body>
+</html>
